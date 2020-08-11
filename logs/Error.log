@@ -1,0 +1,72 @@
+10-Aug-2020 14:13:12.661 INFO [main] com.jra.petadoptions.PetAdoptionsApplication [logStarting] - Starting PetAdoptionsApplication on Jesus-PC with PID 10716 (C:\Users\Jesus\Documents\Portfolio\jra-pet-adoptions\target\classes started by Jesus in C:\Users\Jesus\Documents\Portfolio\jra-pet-adoptions)
+
+10-Aug-2020 14:13:12.676 INFO [main] com.jra.petadoptions.PetAdoptionsApplication [logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+
+10-Aug-2020 14:13:13.603 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+
+10-Aug-2020 14:13:13.665 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [registerRepositoriesIn] - Finished Spring Data repository scanning in 61ms. Found 2 JPA repository interfaces.
+
+10-Aug-2020 14:13:14.395 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [initialize] - Tomcat initialized with port(s): 8080 (http)
+
+10-Aug-2020 14:13:14.411 INFO [main] org.apache.coyote.http11.Http11NioProtocol [log] - Initializing ProtocolHandler ["http-nio-8080"]
+
+10-Aug-2020 14:13:14.411 INFO [main] org.apache.catalina.core.StandardService [log] - Starting service [Tomcat]
+
+10-Aug-2020 14:13:14.411 INFO [main] org.apache.catalina.core.StandardEngine [log] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+
+10-Aug-2020 14:13:14.514 INFO [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/jra] [log] - Initializing Spring embedded WebApplicationContext
+
+10-Aug-2020 14:13:14.514 INFO [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 1801 ms
+
+10-Aug-2020 14:13:14.706 INFO [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+
+10-Aug-2020 14:13:14.727 INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Starting...
+
+10-Aug-2020 14:13:15.038 INFO [main] com.zaxxer.hikari.HikariDataSource [getConnection] - HikariPool-1 - Start completed.
+
+10-Aug-2020 14:13:15.085 INFO [task-1] org.hibernate.jpa.internal.util.LogHelper [logPersistenceUnitInformation] - HHH000204: Processing PersistenceUnitInfo [name: default]
+
+10-Aug-2020 14:13:15.121 INFO [task-1] org.hibernate.Version [logVersion] - HHH000412: Hibernate ORM core version 5.4.18.Final
+
+10-Aug-2020 14:13:15.199 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [openEntityManagerInViewInterceptor] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+
+10-Aug-2020 14:13:15.256 INFO [task-1] org.hibernate.annotations.common.Version [<clinit>] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+
+10-Aug-2020 14:13:15.377 INFO [task-1] org.hibernate.dialect.Dialect [<init>] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+10-Aug-2020 14:13:16.083 INFO [task-1] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [initiateService] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+
+10-Aug-2020 14:13:16.099 INFO [task-1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [buildNativeEntityManagerFactory] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+
+10-Aug-2020 14:13:16.309 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain [<init>] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b916cc2, org.springframework.security.web.context.SecurityContextPersistenceFilter@4822ab4d, org.springframework.security.web.header.HeaderWriterFilter@2358443e, org.springframework.web.filter.CorsFilter@7f5e9949, org.springframework.security.web.authentication.logout.LogoutFilter@6b2f7527, com.jra.petadoptions.jwt.JwtUsernameAndPasswordAuthenticationFilter@323eecf8, com.jra.petadoptions.jwt.JwtTokenFilter@2e02cc37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ad1f167, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40b01718, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e355249, org.springframework.security.web.session.SessionManagementFilter@62c53685, org.springframework.security.web.access.ExceptionTranslationFilter@c697186, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64fc6470]
+
+10-Aug-2020 14:13:16.711 INFO [main] org.apache.coyote.http11.Http11NioProtocol [log] - Starting ProtocolHandler ["http-nio-8080"]
+
+10-Aug-2020 14:13:16.727 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [start] - Tomcat started on port(s): 8080 (http) with context path '/jra'
+
+10-Aug-2020 14:13:16.986 INFO [main] org.springframework.data.repository.config.DeferredRepositoryInitializationListener [onApplicationEvent] - Triggering deferred initialization of Spring Data repositories…
+
+10-Aug-2020 14:13:17.425 INFO [main] org.springframework.data.repository.config.DeferredRepositoryInitializationListener [onApplicationEvent] - Spring Data repositories initialized!
+
+10-Aug-2020 14:13:17.430 INFO [main] com.jra.petadoptions.PetAdoptionsApplication [logStarted] - Started PetAdoptionsApplication in 5.2 seconds (JVM running for 6.369)
+
+10-Aug-2020 14:13:26.294 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/jra] [log] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+
+10-Aug-2020 14:13:26.294 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet [initServletBean] - Initializing Servlet 'dispatcherServlet'
+
+10-Aug-2020 14:13:26.309 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet [initServletBean] - Completed initialization in 15 ms
+
+10-Aug-2020 14:13:26.471 ERROR [http-nio-8080-exec-1] com.jra.petadoptions.utility.LoggingAspect [logServiceException] - Unable to find the pet with id: 100
+
+10-Aug-2020 14:13:26.471 ERROR [http-nio-8080-exec-1] com.jra.petadoptions.utility.LoggingAspect [logControllerException] - Unable to find the pet with id: 100
+
+10-Aug-2020 14:18:09.461 INFO [RMI TCP Connection(12)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [shutdown] - Application shutdown requested.
+
+10-Aug-2020 14:18:09.925 INFO [RMI TCP Connection(12)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [destroy] - Closing JPA EntityManagerFactory for persistence unit 'default'
+
+10-Aug-2020 14:18:09.929 INFO [RMI TCP Connection(12)-127.0.0.1] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+
+10-Aug-2020 14:18:09.930 INFO [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown initiated...
+
+10-Aug-2020 14:18:09.958 INFO [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource [close] - HikariPool-1 - Shutdown completed.
+
