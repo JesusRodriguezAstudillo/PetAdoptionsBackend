@@ -26,7 +26,7 @@ public class UserEntity {
 	private String email;
 	private Boolean enabled;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToMany(cascade={CascadeType.DETACH, CascadeType.PERSIST}, fetch=FetchType.EAGER)
 	@JoinTable(name="userrole",
 				joinColumns=@JoinColumn(name="userid"),
 				inverseJoinColumns=@JoinColumn(name="roleid"))

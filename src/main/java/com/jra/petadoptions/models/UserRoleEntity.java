@@ -27,7 +27,7 @@ public class UserRoleEntity {
 	@Column(name="name")
 	private String roleName;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH}, fetch=FetchType.EAGER)
 	@JoinTable(name="rolepermission",
 				joinColumns=@JoinColumn(name="roleid"),
 				inverseJoinColumns=@JoinColumn(name="permissionid"))

@@ -37,6 +37,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	private final String[] PERMIT_ALL_LIST = {
 			"/user/login",
+			"/user/createAccount",
 			"/pet/viewAllPets",
 			"/pet/viewPet/**",
 			"/v2/api-docs/**",
@@ -60,8 +61,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
 			.antMatchers("/pet/addPet").hasAuthority("write")
 			.antMatchers("/pet/deletePet").hasAuthority("delete")
 			.antMatchers("/pet/editPet/**").hasAuthority("update")
+			.antMatchers("/user/getUsers", "/user/deleteUser").hasAnyRole("ADMIN", "EDITOR")
 			.antMatchers("/pet/reservePet").hasAnyRole("USER", "EDITOR", "ADMIN")
-			.antMatchers("/user/test").hasAnyRole("ADMIN","USER","EDITOR")
 			.anyRequest()
 			.authenticated();
 	}
