@@ -23,7 +23,8 @@ public class Pet {
 	@PositiveOrZero
 	private Integer ageMonths;
 	
-	private String imageLink;
+	private byte[] image;
+	private String imageExt;
 	private Boolean vaccinated = false;
 	
 	@PositiveOrZero
@@ -72,11 +73,17 @@ public class Pet {
 	public void setAgeMonths(Integer ageMonths) {
 		this.ageMonths = ageMonths;
 	}
-	public String getImageLink() {
-		return imageLink;
+	public byte[] getImage() {
+		return image;
 	}
-	public void setImageLink(String imageLink) {
-		this.imageLink = imageLink;
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	public String getImageExt() {
+		return imageExt;
+	}
+	public void setImageExt(String imageExt) {
+		this.imageExt = imageExt;
 	}
 	public Boolean getVaccinated() {
 		return vaccinated;

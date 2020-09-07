@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
 @Entity(name="pet")
@@ -26,8 +27,12 @@ public class PetEntity {
 	@Column(name="age_months")
 	private Integer ageMonths;
 	
-	@Column(name="imagelink")
-	private String imageLink;
+	@Column(name="image")
+	@Lob
+	private byte[] image;
+	
+	@Column(name="imageext")
+	private String imageExt;
 	private Boolean vaccinated;
 	
 	@OneToOne(cascade=CascadeType.ALL,optional=true)
@@ -76,11 +81,17 @@ public class PetEntity {
 	public void setAgeMonths(Integer ageMonths) {
 		this.ageMonths = ageMonths;
 	}
-	public String getImageLink() {
-		return imageLink;
+	public byte[] getImage() {
+		return image;
 	}
-	public void setImageLink(String imageLink) {
-		this.imageLink = imageLink;
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	public String getImageExt() {
+		return imageExt;
+	}
+	public void setImageExt(String imageExt) {
+		this.imageExt = imageExt;
 	}
 	public Boolean getVaccinated() {
 		return vaccinated;

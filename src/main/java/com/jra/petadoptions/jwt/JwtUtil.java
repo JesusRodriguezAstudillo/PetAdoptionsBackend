@@ -3,6 +3,7 @@ package com.jra.petadoptions.jwt;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Optional;
 import java.util.function.Function;
 
 import javax.crypto.SecretKey;
@@ -11,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import com.jra.petadoptions.auth.ApiUserDAO;
+import com.jra.petadoptions.models.UserEntity;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -23,6 +27,9 @@ public class JwtUtil {
 	
 	@Autowired
 	private SecretKey secretKey;
+	
+	@Autowired
+	private ApiUserDAO userDAO;
 	
 	public String getUsernameFromToken(String token) {
 		return extractClaim(token, Claims::getSubject);
@@ -54,9 +61,15 @@ public class JwtUtil {
 	}
 	
 	public String createToken(Collection<? extends GrantedAuthority> claims, String username) {
+		Integer id = userDAO
+						.findByUsername(username)
+						.map(user -> user.getId())
+						.orElseThrow();
+		
 		String token = Jwts.builder()
 						.setSubject(username)
 						.claim("authorities", claims)
+						.claim("id", id)
 						.setIssuedAt(new Date())
 						.setExpiration(java.sql.Date.valueOf(LocalDate.now().plusDays(3)))
 						.signWith(secretKey)

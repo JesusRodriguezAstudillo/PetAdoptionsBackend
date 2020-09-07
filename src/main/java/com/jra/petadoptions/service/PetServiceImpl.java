@@ -35,12 +35,13 @@ public class PetServiceImpl implements PetService {
 		
 		pet.setId(entity.getId());
 		pet.setName(entity.getName());
+		pet.setImage(entity.getImage());
+		pet.setImageExt(entity.getImageExt());
 		pet.setBreed(entity.getBreed());
 		pet.setGender(entity.getGender());
 		pet.setSpecies(entity.getSpecies());
 		pet.setAgeYears(entity.getAgeYears());
 		pet.setAgeMonths(entity.getAgeMonths());
-		pet.setImageLink(entity.getImageLink());
 		pet.setVaccinated(entity.getVaccinated());
 		
 		if(entity.getReservedBy() != null) {
@@ -55,11 +56,12 @@ public class PetServiceImpl implements PetService {
 		
 		entity.setName(pet.getName());
 		entity.setBreed(pet.getBreed());
+		entity.setImage(pet.getImage());
 		entity.setGender(pet.getGender());
 		entity.setSpecies(pet.getSpecies());
+		entity.setImageExt(pet.getImageExt());
 		entity.setAgeYears(pet.getAgeYears());
 		entity.setAgeMonths(pet.getAgeMonths());
-		entity.setImageLink(pet.getImageLink());
 		entity.setVaccinated(pet.getVaccinated());
 		entity.setReservedBy(userDAO.findById(pet.getReservedBy()).orElse(null));
 		
@@ -94,8 +96,10 @@ public class PetServiceImpl implements PetService {
 		String name = entity
 				.map(p -> {
 					p = modelToEntity(pet);
+					p.setId(pet.getId());
 					String pName = p.getName();
 					petDAO.save(p);
+					
 					return pName;
 				})
 				.orElseThrow(() -> new PetNotFoundException(pet.getId()));
@@ -122,7 +126,7 @@ public class PetServiceImpl implements PetService {
 						.orElse("Could not find your credentials. Try again later");
 			}
 			else {
-				result = "Sorry, " + pet.getName() + " is reserved by someone else! Check back later.";
+				result = "Sorry, " + pet.getName() + " is already reserved! Check back later.";
 			}
 			
 			return result;
