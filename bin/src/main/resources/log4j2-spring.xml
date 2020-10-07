@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" >
+            <PatternLayout
+                pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable" />
+        </Console>
+ 
+        <RollingFile name="LogFile"
+            fileName="./logs/Error.log"
+            filePattern="./logs/$${date:yyyy-MM}/spring-boot-logger-log4j2-%d{-dd-MMMM-yyyy}-%i.log.gz"
+            append="true">
+            <PatternLayout pattern="%d{dd-MMM-yyyy HH:mm:ss.SSS} %level [%t] %logger{36} [%M] - %msg%n%ex%n">
+                <!--pattern>%d %p %C{1.} [%t] %m%n</pattern-->
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <SizeBasedTriggeringPolicy
+                    size="10 MB" />
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+ 
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="LogFile" />
+        </Root>
+ 
+        <Logger name="application" level="debug">
+        	<AppenderRef ref="LogFile"></AppenderRef>
+        </Logger>
+        <Logger name="cons" level="info">
+        	<AppenderRef ref="Console"></AppenderRef>
+        </Logger>
+    </Loggers>
+ 
+</Configuration>

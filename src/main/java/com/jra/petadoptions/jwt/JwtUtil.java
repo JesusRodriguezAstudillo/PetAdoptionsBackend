@@ -56,15 +56,15 @@ public class JwtUtil {
 		return getExpirationDate(token).before(new Date());
 	}
 	
-	public String generateToken(UserDetails userDetails) {
+	public String generateToken(UserDetails userDetails) throws Exception {
 		return createToken(userDetails.getAuthorities(), userDetails.getUsername());
 	}
 	
-	public String createToken(Collection<? extends GrantedAuthority> claims, String username) {
+	public String createToken(Collection<? extends GrantedAuthority> claims, String username) throws Exception {
 		Integer id = userDAO
 						.findByUsername(username)
 						.map(user -> user.getId())
-						.orElseThrow();
+						.orElseThrow(() -> new Exception("something wrong"));
 		
 		String token = Jwts.builder()
 						.setSubject(username)
